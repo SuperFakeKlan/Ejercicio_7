@@ -1,4 +1,5 @@
 import { StudentCards } from "./cards.js"
+import { moveFormRight, moveLeft } from "./movepage.js"
 document.addEventListener('DOMContentLoaded', () => {
     let alumnos = []
     
@@ -6,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
      * toma el elemento con el id "cards" y coloca las tarjetas dentro del div
      */
     const viewCards = () => {
-        const div = document.getElementById('cards')
+        const div = document.getElementById('cardsContent')
         const cards = StudentCards(alumnos)
         div.innerHTML = cards
     }
@@ -31,6 +32,9 @@ document.addEventListener('DOMContentLoaded', () => {
             numero: numero.value,
             organi: organi.value,
         }
+        console.log(alumno)
+        const myjson = JSON.stringify(alumno)
+        console.log(myjson)
         alumnos.push(alumno)
         console.log('nuevo insertado')
     }
@@ -57,6 +61,8 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     const btn = document.getElementById('enviar')
+    const switchBtn = document.getElementById('switchPage')
+    const backBtn = document.getElementById('backtoIndex')
     /**
      * flujo de ejecucion principal que genera las tarjetas
      */
@@ -66,6 +72,12 @@ document.addEventListener('DOMContentLoaded', () => {
         addlistens()
     }
     btn.addEventListener('click', generateCards)
-
-
+    switchBtn.addEventListener('click',()=>{
+        moveLeft()
+        moveFormRight()
+    })
+    backBtn.addEventListener('click',()=>{
+        moveLeft()
+        moveFormRight()
+    })
 })
