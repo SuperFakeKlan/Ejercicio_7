@@ -11,7 +11,6 @@ const StudentCard = (student,i) => {
             <div class="card-body">
                 <h4 class="card-title">${student.name}</h4>
                 <p class="card-text">${student.numero}</p>
-                <p class="card-text">Estudiante número: ${i}</p>
             </div>
             <button class="btn btn-danger eliminar" id="${i}">Eliminar</button>
         </div>

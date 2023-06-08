@@ -13,8 +13,8 @@
 </head>
 
 <body>
-    <div class="container">
-        <form id="formu" class="">
+    <div class="container" id="page">
+        <div id="formu" class="mt-5">
             <input class="form-control" type="text" name="name" id="name" placeholder="name">
             <input class="form-control" type="email" name="email" id="email" placeholder="email">
             <input class="form-control" type="text" name="apaterno" id="apaterno" placeholder="apellido paterno">
@@ -22,10 +22,14 @@
             <input class="form-control" type="text" name="organi" id="organi" placeholder="organización">
             <input class="form-control" type="text" name="puesto" id="puesto" placeholder="puesto">
             <input class="form-control" type="number" name="numero" id="numero" placeholder="numero">
-        </form>
-        <button id="enviar" type="submit" class="btn btn-primary">enviar</button>
-        
-    <div id="cards" class="container mt-5"></div>
+            <button id="enviar" type="submit" class="btn btn-primary">enviar</button>
+            <button id="switchPage" class="btn btn-primary">ver tarjetas</button>
+        </div>
+
+        <div id="cards" class="container mt-5 right">
+            <button class="btn btn-primary" id="backtoIndex">regresar</button>
+            <div id="cardsContent" class="mt-5"></div>
+        </div>
     </div>
 </body>
 
